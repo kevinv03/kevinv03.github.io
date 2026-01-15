@@ -1,15 +1,6 @@
-/* Portfolio site behavior: render cards, filtering, theme toggle */
+/* Portfolio behavior: render projects + timeline, filtering, theme toggle */
 (function () {
   const qs = (s) => document.querySelector(s);
-  const qsa = (s) => Array.from(document.querySelectorAll(s));
-
-  const grid = qs("#projectGrid");
-  const tpl = qs("#projectCardTpl");
-  const searchInput = qs("#searchInput");
-  const companySelect = qs("#companySelect");
-  const platformSelect = qs("#platformSelect");
-  const resultCount = qs("#resultCount");
-  const socialLinks = qs("#socialLinks");
 
   // Year
   qs("#year").textContent = new Date().getFullYear();
@@ -35,16 +26,8 @@
     themeToggle.querySelector(".icon").textContent = current === "dark" ? "☾" : "☀";
   }
 
-  // Populate company filter
-  const companies = Array.from(new Set(PROJECTS.map(p => p.company))).sort((a,b)=>a.localeCompare(b));
-  for (const c of companies) {
-    const opt = document.createElement("option");
-    opt.value = c;
-    opt.textContent = c;
-    companySelect.appendChild(opt);
-  }
-
   // Social links
+  const socialLinks = qs("#socialLinks");
   if (Array.isArray(SOCIAL) && SOCIAL.length) {
     SOCIAL.forEach(s => {
       const a = document.createElement("a");
@@ -60,6 +43,51 @@
     p.className = "muted tiny";
     p.textContent = "Add your GitHub/LinkedIn in data.js to show links here.";
     socialLinks.appendChild(p);
+  }
+
+  // Timeline
+  const timeline = qs("#timeline");
+  if (timeline && Array.isArray(EXPERIENCE)) {
+    const frag = document.createDocumentFragment();
+    EXPERIENCE.forEach(x => {
+      const el = document.createElement("article");
+      el.className = "tl";
+      el.innerHTML = `
+        <div class="tl__left">
+          <div><strong>${escapeHtml(x.dates || "")}</strong></div>
+          <div>${escapeHtml(x.location || "")}</div>
+        </div>
+        <div>
+          <h3 class="tl__title">${escapeHtml(x.role || "")} — ${escapeHtml(x.company || "")}</h3>
+          <ul class="tl__bullets"></ul>
+        </div>
+      `;
+      const ul = el.querySelector(".tl__bullets");
+      (x.bullets || []).forEach(b => {
+        const li = document.createElement("li");
+        li.textContent = b;
+        ul.appendChild(li);
+      });
+      frag.appendChild(el);
+    });
+    timeline.appendChild(frag);
+  }
+
+  // Projects filtering
+  const grid = qs("#projectGrid");
+  const tpl = qs("#projectCardTpl");
+  const searchInput = qs("#searchInput");
+  const companySelect = qs("#companySelect");
+  const platformSelect = qs("#platformSelect");
+  const resultCount = qs("#resultCount");
+
+  // Populate company filter
+  const companies = Array.from(new Set(PROJECTS.map(p => p.company))).sort((a,b)=>a.localeCompare(b));
+  for (const c of companies) {
+    const opt = document.createElement("option");
+    opt.value = c;
+    opt.textContent = c;
+    companySelect.appendChild(opt);
   }
 
   function render(items) {
@@ -129,12 +157,16 @@
     render(filtered);
   }
 
-  // Wire events
   [searchInput, companySelect, platformSelect].forEach(el => {
     el.addEventListener("input", applyFilters);
     el.addEventListener("change", applyFilters);
   });
 
-  // Initial
   render(PROJECTS);
+
+  function escapeHtml(str){
+    return String(str).replace(/[&<>"']/g, (m)=>({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+    }[m]));
+  }
 })();
