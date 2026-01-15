@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kevin S. Villanueva — Portfolio</title>
+  <meta name="description" content="Senior Android Application Developer — portfolio and selected projects." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Kevin S. Villanueva</span>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
+          <span class="icon" aria-hidden="true">☾</span>
+          <span class="btn__text">Theme</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Senior Android Application Developer</p>
+          <h1 class="hero__title">Building reliable, user-friendly mobile apps.</h1>
+          <p class="hero__subtitle">
+            I develop Android and cross-platform mobile applications across health, fintech, crypto, real-estate,
+            research, and employee productivity—focusing on performance, stability, and clean architecture.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects">View Projects</a>
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+
+          <ul class="meta" aria-label="Quick info">
+            <li><span class="meta__label">Location</span><span class="meta__value">Mabalacat City, Pampanga</span></li>
+            <li><span class="meta__label">Email</span><a class="meta__value" href="mailto:kevin.villanueva03@gmail.com">kevin.villanueva03@gmail.com</a></li>
+            <li><span class="meta__label">Phone</span><a class="meta__value" href="tel:+639951329529">(+63) 995-132-9529</a></li>
+          </ul>
+        </div>
+
+        <aside class="hero__card" aria-label="Highlights">
+          <div class="card">
+            <h2 class="card__title">Highlights</h2>
+            <ul class="bullets">
+              <li>Mobile delivery across multiple industries (research, healthcare, fintech, real-estate, crypto).</li>
+              <li>Experience on Android + React Native projects.</li>
+              <li>Comfortable with clean architecture, MVI/MVVM, and scalable app structure.</li>
+            </ul>
+            <div class="chips" aria-label="Focus areas">
+              <span class="chip">Android</span>
+              <span class="chip">Kotlin</span>
+              <span class="chip">Jetpack Compose</span>
+              <span class="chip">React Native</span>
+              <span class="chip">Clean Architecture</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Selected projects</h2>
+          <p class="section__subtitle">A curated list from my portfolio. Use filters to quickly scan by company or platform.</p>
+        </div>
+
+        <div class="filters" role="region" aria-label="Project filters">
+          <div class="filters__row">
+            <label class="field">
+              <span class="field__label">Search</span>
+              <input id="searchInput" class="input" type="search" placeholder="Search projects… (e.g., crypto, doctor, research)" autocomplete="off" />
+            </label>
+            <label class="field">
+              <span class="field__label">Company</span>
+              <select id="companySelect" class="input">
+                <option value="all">All</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Platform</span>
+              <select id="platformSelect" class="input">
+                <option value="all">All</option>
+                <option value="Android">Android</option>
+                <option value="React Native">React Native</option>
+                <option value="Web">Web</option>
+                <option value="N/A">N/A</option>
+              </select>
+            </label>
+          </div>
+          <p class="filters__hint" id="resultCount" aria-live="polite"></p>
+        </div>
+
+        <div id="projectGrid" class="grid" aria-label="Project list">
+          <!-- Cards injected by script -->
+        </div>
+
+        <template id="projectCardTpl">
+          <article class="card project">
+            <div class="project__top">
+              <h3 class="project__title"></h3>
+              <div class="project__tags" aria-label="Tags"></div>
+            </div>
+            <p class="project__desc"></p>
+            <div class="project__actions"></div>
+          </article>
+        </template>
+
+      </div>
+    </section>
+
+    <section id="about" class="section section--alt">
+      <div class="container about">
+        <div>
+          <h2 class="section__title">About</h2>
+          <p class="section__subtitle">
+            Senior mobile developer with hands-on experience delivering production apps for clients and users across different domains.
+            I focus on clean implementation, maintainable architecture, and thoughtful UX.
+          </p>
+          <div class="about__cols">
+            <div class="card">
+              <h3 class="card__title">What I care about</h3>
+              <ul class="bullets">
+                <li>App stability and performance under real-world usage</li>
+                <li>Clear architecture (Clean, MVI/MVVM), testability, and maintainability</li>
+                <li>Shipping, monitoring, and iterating with feedback</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="card__title">Working style</h3>
+              <ul class="bullets">
+                <li>Collaborative with designers, backend engineers, and stakeholders</li>
+                <li>Proactive on edge cases, QA, and release readiness</li>
+                <li>Pragmatic: deliver value first, refactor with intention</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card about__side">
+          <h3 class="card__title">Download</h3>
+          <p class="muted">Add your CV/resume PDF into the repository and link it here.</p>
+          <a class="btn btn--small" href="KV-Portfolio-2025.pdf" download>Download Portfolio PDF</a>
+          <p class="muted tiny">Tip: keep the filename the same so the link stays valid.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div>
+          <h2 class="section__title">Contact</h2>
+          <p class="section__subtitle">Want to work together or have a role in mind? Send me a message.</p>
+
+          <div class="contact__cards">
+            <a class="card contact__card" href="mailto:kevin.villanueva03@gmail.com">
+              <div class="contact__label">Email</div>
+              <div class="contact__value">kevin.villanueva03@gmail.com</div>
+            </a>
+            <a class="card contact__card" href="tel:+639951329529">
+              <div class="contact__label">Phone</div>
+              <div class="contact__value">(+63) 995-132-9529</div>
+            </a>
+            <div class="card contact__card">
+              <div class="contact__label">Location</div>
+              <div class="contact__value">Mabalacat City, Pampanga</div>
+            </div>
+          </div>
+
+          <div class="card contact__note">
+            <h3 class="card__title">Optional links</h3>
+            <p class="muted">
+              You can add your GitHub / LinkedIn links in <code>data.js</code> and they’ll show here automatically.
+            </p>
+            <div id="socialLinks" class="social" aria-label="Social links"></div>
+          </div>
+        </div>
+
+        <aside class="card footer-card">
+          <h3 class="card__title">Hosting on GitHub Pages</h3>
+          <ol class="steps">
+            <li>Create a repo named <code>&lt;your-username&gt;.github.io</code></li>
+            <li>Upload these files to the repo root</li>
+            <li>Enable <strong>Pages</strong> in repo settings (Deploy from branch)</li>
+            <li>Open <code>https://&lt;your-username&gt;.github.io</code></li>
+          </ol>
+          <p class="muted tiny">You can also use a project repo and publish from the <code>main</code> branch root.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="muted">© <span id="year"></span> Kevin S. Villanueva</span>
+      <a class="muted" href="#main">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
