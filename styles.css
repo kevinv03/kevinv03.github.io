@@ -1,4 +1,3 @@
-
 :root{
   --bg:#0b0c10;
   --bg2:#0f1117;
@@ -82,37 +81,66 @@ code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberat
 .btn__text{font-weight:700}
 .icon{font-size:16px; line-height:1}
 
+/* HERO */
 .hero{padding:64px 0 18px}
-.hero__grid{display:grid; grid-template-columns:1.35fr .9fr; gap:26px; align-items:start}
-@media (max-width: 920px){.hero__grid{grid-template-columns:1fr}}
+
+/* 3-column hero: photo | content | card */
+.hero__grid{
+  display:grid;
+  grid-template-columns: minmax(240px, 300px) 1fr minmax(320px, 380px);
+  grid-template-areas: "photo content card";
+  gap:26px;
+  align-items:start;
+}
+
+.hero__photo{ grid-area: photo; display:flex; justify-content:flex-start; align-items:flex-start; }
+.hero__content{ grid-area: content; }
+.hero__card{ grid-area: card; }
+
+/* Tablet: photo + content; card below */
+@media (max-width: 1020px){
+  .hero__grid{
+    grid-template-columns: minmax(240px, 300px) 1fr;
+    grid-template-areas:
+      "photo content"
+      "card  card";
+  }
+}
+
+/* Mobile: stack */
+@media (max-width: 760px){
+  .hero__grid{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "content"
+      "card";
+  }
+}
+
 .eyebrow{display:inline-block; margin:0 0 10px; color:var(--muted); font-weight:700; letter-spacing:.02em}
 .hero__title{margin:0 0 10px; font-size:46px; line-height:1.06}
 @media (max-width: 560px){.hero__title{font-size:34px}}
 .hero__subtitle{margin:0 0 16px; color:var(--muted); max-width:68ch}
 .hero__cta{display:flex; gap:12px; flex-wrap:wrap; margin:14px 0 18px}
 
-.hero__photo {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.hero__photo img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
+/* PHOTO: do NOT crop hair */
+.hero__photo img{
+  width: 260px;
+  height: 320px;
+  object-fit: contain;      /* keeps full head visible */
+  object-position: center;  /* centered framing */
+  padding: 10px;
   border-radius: 18px;
   border: 1px solid var(--border);
   box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  background: var(--card);
+  background: rgba(255,255,255,.06);
 }
 
-/* Mobile */
-@media (max-width: 920px) {
-  .hero__photo img {
-    width: 180px;
-    height: 180px;
-  }
+/* Mobile photo sizing */
+@media (max-width: 760px){
+  .hero__photo{justify-content:center}
+  .hero__photo img{width: 220px; height: 280px;}
 }
 
 .stats{display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin:18px 0}
