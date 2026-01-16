@@ -13,13 +13,14 @@
   }
   setThemeButtonIcon();
 
-  themeToggle.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme") || "dark";
-    const next = current === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    setThemeButtonIcon();
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme") || "dark";
+      const next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  }
 
   function setThemeButtonIcon() {
     const current = document.documentElement.getAttribute("data-theme") || "dark";
@@ -43,6 +44,19 @@
     p.className = "muted tiny";
     p.textContent = "Add your GitHub/LinkedIn in data.js to show links here.";
     socialLinks.appendChild(p);
+  }
+
+  const socialTop = qs("#socialLinksTop");
+
+  if (socialTop && Array.isArray(SOCIAL)) {
+    SOCIAL.forEach(s => {
+      const a = document.createElement("a");
+      a.href = s.href;
+      a.target = "_blank";
+      a.rel = "noreferrer";
+      a.textContent = s.label;
+      socialTop.appendChild(a);
+    });
   }
 
   // Timeline
