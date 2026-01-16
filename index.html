@@ -36,64 +36,58 @@
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero hero--profile">
       <div class="container">
-        <div class="heroCard">
-          <div class="heroCard__top">
-            <div class="heroCard__avatar">
-              <img
-                src="assets/profile.jpg"
-                alt="Kevin S. Villanueva – Senior Mobile Application Developer"
-                loading="eager"
-              />
-            </div>
-
-            <div class="heroCard__main">
-              <p class="heroCard__role">Senior Mobile Application Developer</p>
-              <h1 class="heroCard__name">Kevin S. Villanueva</h1>
-              <p class="heroCard__headline">Ship mobile apps that clients trust.</p>
-
-              <p class="heroCard__summary">
-                11+ years building high-performance apps — specializing in <strong>Android (Kotlin/Java, Jetpack Compose)</strong>,
-                with <strong>React Native</strong> experience and basic working knowledge of <strong>iOS (Swift)</strong>.
-              </p>
-
-              <div class="heroCard__cta">
-                <a class="btn btn--primary" href="#contact">Hire / Contact</a>
-                <a class="btn" href="#projects">View projects</a>
-                <a class="btn btn--ghost" href="#downloads">Download CV</a>
-              </div>
-
-              <div class="heroCard__stats" aria-label="Key stats">
-                <div class="statPill">
-                  <div class="statPill__num">11+</div>
-                  <div class="statPill__label">Years</div>
-                </div>
-                <div class="statPill">
-                  <div class="statPill__num">20+</div>
-                  <div class="statPill__label">Apps</div>
-                </div>
-                <div class="statPill statPill--wide">
-                  <div class="statPill__num">Android</div>
-                  <div class="statPill__label">Kotlin • Compose • Clean</div>
-                </div>
-              </div>
+        <div class="profileCard">
+          <div class="profileCard__left">
+            <div class="profileAvatar">
+              <img src="assets/profile.jpg" alt="Kevin S. Villanueva" />
             </div>
           </div>
 
-          <div class="heroCard__bottom">
-            <div class="heroMini">
-              <div class="heroMini__k">Location</div>
-              <div class="heroMini__v">Mabalacat City, Pampanga, PH</div>
+          <div class="profileCard__right">
+            <h1 class="profileName">Kevin S. Villanueva</h1>
+            <div class="profileRole">Senior Mobile Application Developer</div>
+
+            <p class="profileSummary">
+              Senior mobile developer with <strong>11+ years</strong> delivering high-performance apps —
+              specializing in <strong>Android (Kotlin/Java, Jetpack Compose)</strong>, with
+              <strong>React Native</strong> experience and basic working knowledge of
+              <strong>iOS (Swift)</strong>.
+            </p>
+
+            <div class="profileCta">
+              <a class="btn btn--primary" href="#contact">Hire / Contact</a>
+              <a class="btn" href="#projects">View projects</a>
+              <a class="btn btn--ghost" href="#downloads">Download CV</a>
             </div>
-            <a class="heroMini" href="mailto:kevin.villanueva03@gmail.com">
-              <div class="heroMini__k">Email</div>
-              <div class="heroMini__v">kevin.villanueva03@gmail.com</div>
-            </a>
-            <a class="heroMini" href="tel:+639951329529">
-              <div class="heroMini__k">Phone</div>
-              <div class="heroMini__v">(+63) 995-132-9529</div>
-            </a>
+
+            <div class="profileBadges" aria-label="Highlights">
+              <span class="profileBadge"><strong>11+</strong> Years</span>
+              <span class="profileBadge"><strong>20+</strong> Apps</span>
+              <span class="profileBadge"><strong>Android</strong> Kotlin • Compose • Clean</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="profileBar" aria-label="Contact bar">
+          <a class="profileBar__item" href="tel:+639951329529">
+            <span class="profileIcon">☎</span>
+            <span>(+63) 995-132-9529</span>
+          </a>
+
+          <a class="profileBar__item" href="mailto:kevin.villanueva03@gmail.com">
+            <span class="profileIcon">✉</span>
+            <span>kevin.villanueva03@gmail.com</span>
+          </a>
+
+          <div class="profileBar__item">
+            <span class="profileIcon">📍</span>
+            <span>Mabalacat City, Pampanga, PH</span>
+          </div>
+
+          <div class="profileBar__item" id="socialLinks">
+            <!-- populated by script.js -->
           </div>
         </div>
       </div>
