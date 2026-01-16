@@ -1,3 +1,6 @@
+/* =========================
+   CSS VARIABLES
+   ========================= */
 :root{
   --bg:#0b0c10;
   --bg2:#0f1117;
@@ -23,6 +26,9 @@
   --shadow:0 10px 30px rgba(15,23,42,.10);
 }
 
+/* =========================
+   BASE
+   ========================= */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -33,21 +39,28 @@ body{
     radial-gradient(900px 700px at 92% 0%, rgba(76,201,240,.20), transparent 55%),
     var(--bg);
   color:var(--text);
-  line-height:1.55;
+  line-height:1.6;
 }
-a{color:inherit}
-.container{max-width:var(--max); margin:0 auto; padding:0 20px}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--max);margin:0 auto;padding:0 20px}
 
+/* =========================
+   SECTIONS
+   ========================= */
 .section{padding:72px 0}
-.section--alt{background:linear-gradient(180deg, transparent, rgba(255,255,255,.03), transparent)}
+@media(max-width:760px){
+  .section{padding:44px 0}
+}
+.section--alt{
+  background:linear-gradient(180deg,transparent,rgba(255,255,255,.03),transparent)
+}
 :root[data-theme="light"] .section--alt{
-  background:linear-gradient(180deg, transparent, rgba(15,23,42,.04), transparent)
+  background:linear-gradient(180deg,transparent,rgba(15,23,42,.04),transparent)
 }
 
 /* =========================
-   TOP BAR
+   TOPBAR
    ========================= */
-
 .topbar{
   position:sticky;
   top:0;
@@ -61,9 +74,10 @@ a{color:inherit}
 }
 .topbar__inner{
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   padding:14px 0;
+  gap:12px;
 }
 .brand{
   display:flex;
@@ -80,45 +94,64 @@ a{color:inherit}
 .nav{
   display:flex;
   gap:10px;
-  align-items:center;
+  flex-wrap:wrap;
 }
-.nav a{
-  text-decoration:none;
+.nav a,.nav button{
   padding:8px 10px;
   border-radius:10px;
 }
 .nav a:hover{
   background:rgba(255,255,255,.06)
 }
+@media(max-width:760px){
+  .topbar__inner{flex-direction:column;align-items:flex-start}
+}
 
 /* =========================
-   PROFILE HERO (FINAL)
+   BUTTONS
    ========================= */
-
-.hero{
-  padding:22px 0 18px;
+.btn{
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+  padding:11px 14px;
+  border-radius:12px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+}
+.btn--primary{
+  background:linear-gradient(135deg,var(--primary),var(--primary2));
+  border-color:transparent;
+  color:#fff;
+}
+.btn--ghost{background:transparent}
+@media(max-width:380px){
+  .btn{width:100%;justify-content:center}
 }
 
-.hero--profile{
-  padding:22px 0 18px;
-}
+/* =========================
+   PROFILE HERO
+   ========================= */
+.hero{padding:22px 0 18px}
 
 .profileCard{
   display:grid;
   grid-template-columns:140px 1fr;
   gap:18px;
-  align-items:center;
-  background:rgba(255,255,255,.03);
+  padding:18px;
   border:1px solid var(--border);
   border-radius:var(--radius);
+  background:rgba(255,255,255,.03);
   box-shadow:var(--shadow);
-  padding:18px;
 }
-
-.profileCard__left{
-  display:flex;
-  justify-content:center;
-  align-items:center;
+@media(max-width:760px){
+  .profileCard{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:14px;
+  }
 }
 
 .profileAvatar{
@@ -127,31 +160,25 @@ a{color:inherit}
   border-radius:999px;
   overflow:hidden;
   border:3px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  box-shadow:0 14px 26px rgba(0,0,0,.35);
+  margin:auto;
 }
-
 .profileAvatar img{
   width:100%;
   height:100%;
-  display:block;
   object-fit:cover;
-  object-position:50% 18%; /* keeps hair visible */
+  object-position:50% 18%;
 }
 
 .profileName{
   margin:0;
   font-size:28px;
-  line-height:1.12;
 }
-
 .profileRole{
   margin-top:4px;
   color:var(--primary2);
   font-weight:800;
   font-size:14px;
 }
-
 .profileSummary{
   margin:10px 0 12px;
   color:var(--muted);
@@ -164,83 +191,92 @@ a{color:inherit}
   flex-wrap:wrap;
   margin-bottom:10px;
 }
+@media(max-width:760px){
+  .profileCta{justify-content:center}
+}
 
 .profileBadges{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
 }
-
+@media(max-width:760px){
+  .profileBadges{justify-content:center}
+}
 .profileBadge{
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.02);
   padding:8px 10px;
+  border:1px solid var(--border);
   border-radius:12px;
   font-size:13px;
 }
 
-/* bottom contact bar */
+/* =========================
+   PROFILE BAR
+   ========================= */
 .profileBar{
   margin-top:12px;
   display:flex;
   flex-wrap:wrap;
   gap:12px;
-  align-items:center;
-  justify-content:space-between;
   padding:12px 16px;
-  border-radius:var(--radius);
   border:1px solid var(--border);
+  border-radius:var(--radius);
   background:rgba(255,255,255,.02);
 }
-
 .profileBar__item{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:700;
   font-size:13px;
+  font-weight:700;
+  color:var(--muted);
 }
-
-.profileIcon{
-  width:26px;
-  height:26px;
-  display:grid;
-  place-items:center;
-  border-radius:10px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.03);
-}
-
-/* social links */
-#socialLinks a{
-  text-decoration:none;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.03);
-  padding:8px 10px;
-  border-radius:12px;
-  font-weight:800;
-  margin-left:6px;
-}
-
-/* responsive */
-@media (max-width:820px){
-  .profileCard{
-    grid-template-columns:1fr;
-    text-align:center;
-  }
-  .profileCta,
-  .profileBadges,
-  .profileBar{
-    justify-content:center;
+@media(max-width:760px){
+  .profileBar__item{
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:rgba(255,255,255,.02);
   }
 }
 
 /* =========================
-   GENERIC CARDS & GRIDS
+   SECTION HEADERS
    ========================= */
+.section__head{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.section__title{margin:0;font-size:26px}
+.section__subtitle{margin:6px 0 0;color:var(--muted)}
+@media(max-width:760px){
+  .section__title{font-size:22px}
+  .section__subtitle{font-size:14px}
+}
 
+/* =========================
+   GRID SYSTEM
+   ========================= */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+@media(max-width:1020px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+  .grid{grid-template-columns:1fr}
+}
+.grid--skills{grid-template-columns:repeat(2,1fr)}
+@media(max-width:760px){
+  .grid--skills{grid-template-columns:1fr}
+}
+
+/* =========================
+   CARDS
+   ========================= */
 .card{
   background:rgba(255,255,255,.03);
   border:1px solid var(--border);
@@ -248,15 +284,33 @@ a{color:inherit}
   padding:18px;
   box-shadow:var(--shadow);
 }
+@media(max-width:760px){
+  .card{padding:14px}
+}
 
-.grid{
+/* =========================
+   CONTACT
+   ========================= */
+.contact{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:18px;
+}
+@media(max-width:920px){
+  .contact{grid-template-columns:1fr}
+}
+.contact__cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:16px;
+  gap:12px;
 }
-@media (max-width:1020px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:640px){.grid{grid-template-columns:1fr}}
+@media(max-width:760px){
+  .contact__cards{grid-template-columns:1fr}
+}
 
+/* =========================
+   FOOTER
+   ========================= */
 .footer{
   padding:26px 0 50px;
   border-top:1px solid var(--border);
@@ -266,3 +320,4 @@ a{color:inherit}
   justify-content:space-between;
   flex-wrap:wrap;
 }
+.muted{color:var(--muted)}
