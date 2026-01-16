@@ -2,254 +2,335 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kevin S. Villanueva — Senior Mobile Developer</title>
-
-  <meta name="description"
-        content="Senior Mobile Application Developer specializing in Android (Kotlin, Jetpack Compose), React Native, Clean Architecture, and scalable mobile solutions." />
-
+  <meta name="description" content="Senior Mobile Application Developer — Android (Kotlin/Compose), React Native. Clean Architecture, performance, and reliable delivery." />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="topbar">
-  <div class="container topbar__inner">
-    <div class="brand">
-      <span class="brand__dot"></span>
-      <span class="brand__text">Kevin S. Villanueva</span>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand" aria-label="Brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">Kevin S. Villanueva</span>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#case-studies">Impact</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
+          <span class="icon" aria-hidden="true">☾</span>
+          <span class="btn__text">Theme</span>
+        </button>
+      </nav>
     </div>
+  </header>
 
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="#case-studies">Impact</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-
-      <!-- Keep button simple; JS will update text -->
-      <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
-        Theme
-      </button>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-
-  <!-- HERO / PROFILE -->
-  <section class="hero hero--profile">
-    <div class="container">
-
-      <div class="profileCard">
-        <div class="profileCard__left">
-          <div class="profileAvatar">
-            <img src="assets/profile.jpg" alt="Kevin S. Villanueva" />
-          </div>
-        </div>
-
-        <div class="profileCard__right">
-          <h1 class="profileName">Kevin S. Villanueva</h1>
-          <div class="profileRole">Senior Mobile Application Developer</div>
-
-          <p class="profileSummary">
-            Senior mobile developer with <strong>11+ years</strong> delivering production-ready mobile apps.
-            Expert in <strong>Android (Kotlin, Jetpack Compose)</strong>, with professional
-            <strong>React Native</strong> experience and working knowledge of <strong>iOS (Swift)</strong>.
+  <main id="main">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Senior Mobile Application Developer</p>
+          <h1 class="hero__title">Ship mobile apps that clients trust.</h1>
+          <p class="hero__subtitle">
+            I’m a senior mobile developer with <strong>11+ years</strong> building high-performance apps —
+            specializing in <strong>Android (Kotlin/Java, Jetpack Compose)</strong>, with <strong>React Native</strong> experience and
+            basic working knowledge of <strong>iOS (Swift)</strong>.
           </p>
 
-          <div class="profileCta">
+          <div class="hero__cta">
             <a class="btn btn--primary" href="#contact">Hire / Contact</a>
-            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn" href="#projects">View projects</a>
             <a class="btn btn--ghost" href="#downloads">Download CV</a>
           </div>
 
-          <div class="profileBadges">
-            <span class="profileBadge"><strong>11+</strong> Years</span>
-            <span class="profileBadge"><strong>20+</strong> Apps</span>
-            <span class="profileBadge"><strong>Android</strong> Kotlin • Compose • Clean</span>
+          <div class="stats" aria-label="Key stats">
+            <div class="stat card">
+              <div class="stat__num">11+</div>
+              <div class="stat__label">Years experience</div>
+            </div>
+            <div class="stat card">
+              <div class="stat__num">20+</div>
+              <div class="stat__label">Apps delivered</div>
+            </div>
+            <div class="stat card">
+              <div class="stat__num">Android</div>
+              <div class="stat__label">Kotlin • Compose • Clean</div>
+            </div>
+          </div>
+
+          <ul class="meta" aria-label="Quick info">
+            <li><span class="meta__label">Location</span><span class="meta__value">Mabalacat City, Pampanga, PH</span></li>
+            <li><span class="meta__label">Email</span><a class="meta__value" href="mailto:kevin.villanueva03@gmail.com">kevin.villanueva03@gmail.com</a></li>
+            <li><span class="meta__label">Phone</span><a class="meta__value" href="tel:+639951329529">(+63) 995-132-9529</a></li>
+          </ul>
+        </div>
+
+        <aside class="hero__card" aria-label="Value">
+          <div class="card">
+            <h2 class="card__title">How I help teams</h2>
+            <ul class="bullets">
+              <li><strong>Delivery:</strong> clear scope, predictable releases, strong communication.</li>
+              <li><strong>Architecture:</strong> MVVM/MVI + Clean Architecture for scale and maintenance.</li>
+              <li><strong>Quality:</strong> stability, performance, and secure patterns by default.</li>
+              <li><strong>Collaboration:</strong> mentoring, code reviews, and cross-functional teamwork.</li>
+            </ul>
+            <div class="chips" aria-label="Focus areas">
+              <span class="chip">Kotlin</span>
+              <span class="chip">Jetpack Compose</span>
+              <span class="chip">MVI / Clean</span>
+              <span class="chip">Retrofit</span>
+              <span class="chip">Dagger/Hilt</span>
+              <span class="chip">Firebase</span>
+              <span class="chip">CI/CD</span>
+              <span class="chip">Mobile Security</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="case-studies" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Impact</h2>
+          <p class="section__subtitle">Client-friendly snapshot of outcomes and what I delivered. (Public links where available.)</p>
+        </div>
+
+        <div class="grid grid--case">
+          <article class="card case">
+            <div class="case__top">
+              <h3 class="case__title">Vending Machine Kiosk App</h3>
+              <span class="tag">Freelance • 2025</span>
+            </div>
+            <p class="muted">
+              Built a kiosk-style Android app using Kotlin + Jetpack Compose, integrated with Spring Boot backend for
+              products, inventory, and transactions. Added QR payments, offline caching + sync, and hardware vending triggers.
+            </p>
+            <ul class="bullets">
+              <li>Online + offline payment flows (QR-based)</li>
+              <li>Inventory + transaction processing via backend integration</li>
+              <li>Hardware integration for vending operations</li>
+              <li>AI-based recommendations for product suggestions</li>
+            </ul>
+          </article>
+
+          <article class="card case">
+            <div class="case__top">
+              <h3 class="case__title">DreamLab</h3>
+              <span class="tag">CI&T • Android</span>
+            </div>
+            <p class="muted">
+              Helped deliver a crowdsourcing research app that uses idle smartphone processing power to accelerate scientific research.
+            </p>
+            <div class="case__actions">
+              <a class="link link--primary" target="_blank" rel="noreferrer"
+                 href="https://www.vodafone.com/vodafone-foundation/focus-areas/dreamlab-app">Overview</a>
+            </div>
+          </article>
+
+          <article class="card case">
+            <div class="case__top">
+              <h3 class="case__title">More to Explore</h3>
+              <span class="tag">CI&T • Android</span>
+            </div>
+            <p class="muted">
+              Tourism/parks companion app: trail + site details, status, activities/facilities, directions, maps, and GPS guidance.
+            </p>
+            <div class="case__actions">
+              <a class="link link--primary" target="_blank" rel="noreferrer"
+                 href="https://play.google.com/store/apps/details?id=au.gov.vic.ffm.mte.android&hl=en">Google Play</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="callout card">
+          <div>
+            <h3 class="card__title">What you can expect</h3>
+            <p class="muted">Senior-level ownership: scoped delivery, clean implementation, and stable releases.</p>
+          </div>
+          <div class="callout__items">
+            <div class="callout__item">
+              <div class="callout__k">Architecture</div>
+              <div class="muted">MVP / MVVM / MVI, Clean Architecture</div>
+            </div>
+            <div class="callout__item">
+              <div class="callout__k">Delivery</div>
+              <div class="muted">Agile/Scrum, release readiness, CI/CD</div>
+            </div>
+            <div class="callout__item">
+              <div class="callout__k">Quality</div>
+              <div class="muted">Crashlytics monitoring, testing, performance</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Selected projects</h2>
+          <p class="section__subtitle">Search + filter to quickly scan by company or platform.</p>
+        </div>
+
+        <div class="filters" role="region" aria-label="Project filters">
+          <div class="filters__row">
+            <label class="field">
+              <span class="field__label">Search</span>
+              <input id="searchInput" class="input" type="search" placeholder="Search… (e.g., fintech, crypto, healthcare)" autocomplete="off" />
+            </label>
+            <label class="field">
+              <span class="field__label">Company</span>
+              <select id="companySelect" class="input">
+                <option value="all">All</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Platform</span>
+              <select id="platformSelect" class="input">
+                <option value="all">All</option>
+                <option value="Android">Android</option>
+                <option value="React Native">React Native</option>
+                <option value="Web">Web</option>
+                <option value="N/A">N/A</option>
+              </select>
+            </label>
+          </div>
+          <p class="filters__hint" id="resultCount" aria-live="polite"></p>
+        </div>
+
+        <div id="projectGrid" class="grid" aria-label="Project list"></div>
+
+        <template id="projectCardTpl">
+          <article class="card project">
+            <div class="project__top">
+              <h3 class="project__title"></h3>
+              <div class="project__tags" aria-label="Tags"></div>
+            </div>
+            <p class="project__desc"></p>
+            <div class="project__actions"></div>
+          </article>
+        </template>
+
+      </div>
+    </section>
+
+    <section id="experience" class="section section--alt">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Experience</h2>
+          <p class="section__subtitle">A timeline of roles and responsibilities (most recent first).</p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Skills</h2>
+          <p class="section__subtitle">A quick scan of the tools and practices I use to ship reliable apps.</p>
+        </div>
+
+        <div class="grid grid--skills">
+          <article class="card">
+            <h3 class="card__title">Mobile</h3>
+            <div class="chips">
+              <span class="chip">Android SDK</span><span class="chip">Kotlin</span><span class="chip">Java</span>
+              <span class="chip">Jetpack Compose</span><span class="chip">Material Design</span>
+              <span class="chip">React Native</span><span class="chip">Swift (basic)</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Architecture & Quality</h3>
+            <div class="chips">
+              <span class="chip">MVP</span><span class="chip">MVVM</span><span class="chip">MVI</span><span class="chip">Clean Architecture</span>
+              <span class="chip">JUnit</span><span class="chip">Mockito</span><span class="chip">API Testing</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Platform & Delivery</h3>
+            <div class="chips">
+              <span class="chip">Retrofit</span><span class="chip">Dagger/Hilt</span><span class="chip">Firebase</span>
+              <span class="chip">Crashlytics</span><span class="chip">Analytics</span>
+              <span class="chip">Bitrise CI/CD</span><span class="chip">Google Play Console</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Extras</h3>
+            <div class="chips">
+              <span class="chip">Spring Boot</span><span class="chip">Agile/Scrum</span><span class="chip">Git/GitHub</span>
+              <span class="chip">Jira</span><span class="chip">Figma</span><span class="chip">Mobile Security</span><span class="chip">AI SDKs</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="section section--alt">
+      <div class="container downloads">
+        <div class="card">
+          <h2 class="section__title">Downloads</h2>
+          <p class="muted">Keep these files in your repo root so the links work.</p>
+          <div class="downloads__actions">
+            <a class="btn btn--primary" href="KV-CV-2026.docx" download>Download CV (DOCX)</a>
+            <a class="btn" href="KV-Portfolio-2025.pdf" download>Download Project Portfolio (PDF)</a>
+          </div>
+          <p class="muted tiny">Tip: Don’t rename the files, or update these links if you do.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div>
+          <h2 class="section__title">Contact</h2>
+          <p class="section__subtitle">Open to roles and freelance projects. Let’s talk.</p>
+
+          <div class="contact__cards">
+            <a class="card contact__card" href="mailto:kevin.villanueva03@gmail.com">
+              <div class="contact__label">Email</div>
+              <div class="contact__value">kevin.villanueva03@gmail.com</div>
+            </a>
+            <a class="card contact__card" href="tel:+639951329529">
+              <div class="contact__label">Phone</div>
+              <div class="contact__value">(+63) 995-132-9529</div>
+            </a>
+            <div class="card contact__card">
+              <div class="contact__label">Location</div>
+              <div class="contact__value">Mabalacat City, Pampanga, PH</div>
+            </div>
+          </div>
+
+          <div class="card contact__note">
+            <h3 class="card__title">Links</h3>
+            <p class="muted">Add your GitHub / LinkedIn links in <code>data.js</code> and they’ll show here.</p>
+            <div id="socialLinks" class="social" aria-label="Social links"></div>
           </div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- CONTACT BAR -->
-      <div class="profileBar">
-        <a class="profileBar__item" href="tel:+639951329529">☎ (+63) 995-132-9529</a>
-        <a class="profileBar__item" href="mailto:kevin.villanueva03@gmail.com">✉ kevin.villanueva03@gmail.com</a>
-        <div class="profileBar__item">📍 Mabalacat City, Pampanga, PH</div>
-
-        <!-- JS will fill this -->
-        <div class="profileBar__item" id="socialLinksTop"></div>
-      </div>
-
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="muted">© <span id="year"></span> Kevin S. Villanueva</span>
+      <a class="muted" href="#main">Back to top ↑</a>
     </div>
-  </section>
+  </footer>
 
-  <!-- IMPACT -->
-  <section id="case-studies" class="section section--alt">
-    <div class="container">
-      <div class="section__head">
-        <h2 class="section__title">Impact</h2>
-        <p class="section__subtitle">Selected work and outcomes delivered to clients.</p>
-      </div>
-
-      <div class="grid grid--case">
-        <article class="card">
-          <h3>Vending Machine Kiosk App</h3>
-          <p class="muted">
-            Android kiosk app with QR payments, offline sync, Spring Boot backend,
-            hardware vending integration, and AI-powered recommendations.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>DreamLab</h3>
-          <p class="muted">
-            Crowdsourced research app accelerating scientific discovery using idle device processing.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>More to Explore</h3>
-          <p class="muted">
-            Tourism companion app featuring maps, GPS, park activities, and site information.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <div class="container">
-      <div class="section__head">
-        <h2 class="section__title">Projects</h2>
-        <p class="section__subtitle">A curated list of mobile projects.</p>
-      </div>
-
-      <!-- Optional filters (JS uses if present) -->
-      <div class="filters" role="region" aria-label="Project filters">
-        <div class="filters__row">
-          <label class="field">
-            <span class="field__label">Search</span>
-            <input id="searchInput" class="input" type="search" placeholder="Search projects…" autocomplete="off" />
-          </label>
-
-          <label class="field">
-            <span class="field__label">Company</span>
-            <select id="companySelect" class="input">
-              <option value="all">All</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span class="field__label">Platform</span>
-            <select id="platformSelect" class="input">
-              <option value="all">All</option>
-              <option value="Android">Android</option>
-              <option value="React Native">React Native</option>
-              <option value="Web">Web</option>
-              <option value="N/A">N/A</option>
-            </select>
-          </label>
-        </div>
-        <p class="filters__hint muted" id="resultCount" aria-live="polite"></p>
-      </div>
-
-      <div id="projectGrid" class="grid" aria-label="Project list"></div>
-
-      <!-- Template required by JS -->
-      <template id="projectCardTpl">
-        <article class="card project">
-          <div class="project__top">
-            <h3 class="project__title"></h3>
-            <div class="project__tags" aria-label="Tags"></div>
-          </div>
-          <p class="project__desc muted"></p>
-          <div class="project__actions"></div>
-        </article>
-      </template>
-
-    </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section section--alt">
-    <div class="container">
-      <div class="section__head">
-        <h2 class="section__title">Experience</h2>
-        <p class="section__subtitle">Roles and responsibilities.</p>
-      </div>
-
-      <div class="timeline" id="timeline"></div>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="container">
-      <div class="section__head">
-        <h2 class="section__title">Skills</h2>
-        <p class="section__subtitle">Tools and technologies.</p>
-      </div>
-
-      <div class="grid grid--skills">
-        <article class="card">Android • Kotlin • Java • Jetpack Compose</article>
-        <article class="card">React Native • Swift (basic)</article>
-        <article class="card">Clean Architecture • MVVM • MVI</article>
-        <article class="card">Firebase • CI/CD • Play Console</article>
-      </div>
-    </div>
-  </section>
-
-  <!-- DOWNLOADS -->
-  <section id="downloads" class="section section--alt">
-    <div class="container">
-      <div class="card">
-        <h2>Downloads</h2>
-        <div class="downloads__actions">
-          <a class="btn btn--primary" href="KV-CV-2026.docx" download>Download CV</a>
-          <a class="btn" href="KV-Portfolio-2025.pdf" download>Download Portfolio</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <div class="container contact">
-      <div>
-        <h2 class="section__title">Contact</h2>
-        <p class="section__subtitle">Open to opportunities.</p>
-
-        <div class="contact__cards">
-          <div class="card">📧 kevin.villanueva03@gmail.com</div>
-          <div class="card">📞 (+63) 995-132-9529</div>
-          <div class="card">📍 Pampanga, PH</div>
-        </div>
-
-        <div class="card contact__note">
-          <h3>Links</h3>
-          <div id="socialLinks" class="social"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="container footer__inner">
-    <span class="muted">© <span id="year"></span> Kevin S. Villanueva</span>
-    <a class="muted" href="#main">Back to top ↑</a>
-  </div>
-</footer>
-
-<script src="data.js"></script>
-<script src="script.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
