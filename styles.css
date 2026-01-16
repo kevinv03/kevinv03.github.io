@@ -84,37 +84,167 @@ code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberat
 /* HERO */
 .hero{padding:64px 0 18px}
 
-/* 3-column hero: photo | content | card */
-.hero__grid{
-  display:grid;
-  grid-template-columns: minmax(240px, 300px) 1fr minmax(320px, 380px);
-  grid-template-areas: "photo content card";
-  gap:26px;
-  align-items:start;
+/* =========================
+   Compact Hero (like sample)
+   ========================= */
+
+.hero{
+  padding: 26px 0 16px; /* tighter than before */
 }
 
-.hero__photo{ grid-area: photo; display:flex; justify-content:flex-start; align-items:flex-start; }
-.hero__content{ grid-area: content; }
-.hero__card{ grid-area: card; }
-
-/* Tablet: photo + content; card below */
-@media (max-width: 1020px){
-  .hero__grid{
-    grid-template-columns: minmax(240px, 300px) 1fr;
-    grid-template-areas:
-      "photo content"
-      "card  card";
-  }
+/* main hero card */
+.heroCard{
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-/* Mobile: stack */
-@media (max-width: 760px){
-  .hero__grid{
+/* top row: avatar + content */
+.heroCard__top{
+  display: grid;
+  grid-template-columns: 148px 1fr;
+  gap: 18px;
+  padding: 18px;
+  align-items: start;
+}
+
+/* avatar like LinkedIn (circle) */
+.heroCard__avatar{
+  width: 132px;
+  height: 132px;
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.06);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin-top: 4px;
+  box-shadow: 0 14px 30px rgba(0,0,0,.30);
+}
+
+/* IMPORTANT: keep hair visible */
+.heroCard__avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* move crop slightly down so hair isn't cut */
+  object-position: 50% 18%;
+}
+
+/* text blocks */
+.heroCard__role{
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: .02em;
+  font-size: 13px;
+}
+
+.heroCard__name{
+  margin: 4px 0 4px;
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.heroCard__headline{
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.heroCard__summary{
+  margin: 0 0 12px;
+  color: var(--muted);
+  max-width: 78ch;
+}
+
+/* CTA tighter */
+.heroCard__cta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 12px;
+}
+
+/* Stats like compact pills */
+.heroCard__stats{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.statPill{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.02);
+  min-width: 92px;
+}
+
+.statPill--wide{
+  min-width: 220px;
+}
+
+.statPill__num{
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.statPill__label{
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* bottom contact bar like sample */
+.heroCard__bottom{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  padding: 12px 18px 16px;
+  border-top: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
+}
+
+.heroMini{
+  text-decoration: none;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.02);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+
+.heroMini__k{
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .10em;
+}
+
+.heroMini__v{
+  margin-top: 6px;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* Tablet/mobile stacking */
+@media (max-width: 900px){
+  .heroCard__top{
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "photo"
-      "content"
-      "card";
+    justify-items: center;
+    text-align: center;
+  }
+  .heroCard__cta{
+    justify-content: center;
+  }
+  .heroCard__stats{
+    justify-content: center;
+  }
+  .heroCard__bottom{
+    grid-template-columns: 1fr;
   }
 }
 
