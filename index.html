@@ -36,66 +36,74 @@
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__content">
-          <p class="eyebrow">Senior Mobile Application Developer</p>
-          <h1 class="hero__title">Ship mobile apps that clients trust.</h1>
-          <p class="hero__subtitle">
-            I’m a senior mobile developer with <strong>11+ years</strong> building high-performance apps —
-            specializing in <strong>Android (Kotlin/Java, Jetpack Compose)</strong>, with <strong>React Native</strong> experience and
-            basic working knowledge of <strong>iOS (Swift)</strong>.
-          </p>
+    <section class="hero hero--profile">
+      <div class="container">
 
-          <div class="hero__cta">
-            <a class="btn btn--primary" href="#contact">Hire / Contact</a>
-            <a class="btn" href="#projects">View projects</a>
-            <a class="btn btn--ghost" href="#downloads">Download CV</a>
-          </div>
-
-          <div class="stats" aria-label="Key stats">
-            <div class="stat card">
-              <div class="stat__num">11+</div>
-              <div class="stat__label">Years experience</div>
-            </div>
-            <div class="stat card">
-              <div class="stat__num">20+</div>
-              <div class="stat__label">Apps delivered</div>
-            </div>
-            <div class="stat card">
-              <div class="stat__num">Android</div>
-              <div class="stat__label">Kotlin • Compose • Clean</div>
+        <div class="profileCard">
+          <div class="profileCard__left">
+            <div class="profileAvatar">
+              <img src="assets/profile.jpg" alt="Kevin S. Villanueva" />
             </div>
           </div>
 
-          <ul class="meta" aria-label="Quick info">
-            <li><span class="meta__label">Location</span><span class="meta__value">Mabalacat City, Pampanga, PH</span></li>
-            <li><span class="meta__label">Email</span><a class="meta__value" href="mailto:kevin.villanueva03@gmail.com">kevin.villanueva03@gmail.com</a></li>
-            <li><span class="meta__label">Phone</span><a class="meta__value" href="tel:+639951329529">(+63) 995-132-9529</a></li>
-          </ul>
+          <div class="profileCard__right">
+            <h1 class="profileName">Kevin S. Villanueva</h1>
+            <div class="profileRole">Senior Mobile Application Developer</div>
+
+            <p class="profileSummary">
+              Senior mobile developer with <strong>11+ years</strong> delivering production-ready mobile apps.
+              Expert in <strong>Android (Kotlin, Jetpack Compose)</strong>, with professional
+              <strong>React Native</strong> experience and working knowledge of <strong>iOS (Swift)</strong>.
+            </p>
+
+            <div class="profileCta">
+              <a class="btn btn--primary" href="#contact">Hire / Contact</a>
+              <a class="btn" href="#projects">View Projects</a>
+              <a class="btn btn--ghost" href="#downloads">Download CV</a>
+            </div>
+
+            <div class="profileBadges">
+              <span class="profileBadge"><strong>11+</strong> Years</span>
+              <span class="profileBadge"><strong>20+</strong> Apps</span>
+              <span class="profileBadge"><strong>Android</strong> Kotlin • Compose • Clean</span>
+            </div>
+          </div>
         </div>
 
-        <aside class="hero__card" aria-label="Value">
-          <div class="card">
-            <h2 class="card__title">How I help teams</h2>
-            <ul class="bullets">
-              <li><strong>Delivery:</strong> clear scope, predictable releases, strong communication.</li>
-              <li><strong>Architecture:</strong> MVVM/MVI + Clean Architecture for scale and maintenance.</li>
-              <li><strong>Quality:</strong> stability, performance, and secure patterns by default.</li>
-              <li><strong>Collaboration:</strong> mentoring, code reviews, and cross-functional teamwork.</li>
-            </ul>
-            <div class="chips" aria-label="Focus areas">
-              <span class="chip">Kotlin</span>
-              <span class="chip">Jetpack Compose</span>
-              <span class="chip">MVI / Clean</span>
-              <span class="chip">Retrofit</span>
-              <span class="chip">Dagger/Hilt</span>
-              <span class="chip">Firebase</span>
-              <span class="chip">CI/CD</span>
-              <span class="chip">Mobile Security</span>
+        <!-- CONTACT BAR -->
+        <div class="profileBar">
+          <a class="profileBar__item" href="tel:+639951329529">☎ (+63) 995-132-9529</a>
+          <a class="profileBar__item" href="mailto:kevin.villanueva03@gmail.com">✉ kevin.villanueva03@gmail.com</a>
+          <div class="profileBar__item">📍 Mabalacat City, Pampanga, PH</div>
+
+          <!-- JS will fill this -->
+          <div id="socialLinks" class="social" aria-label="Social links"></div>
+        </div>
+
+        <div>
+          <aside class="hero__card" aria-label="Value">
+            <div class="card">
+              <h2 class="card__title">How I help teams</h2>
+              <ul class="bullets">
+                <li><strong>Delivery:</strong> clear scope, predictable releases, strong communication.</li>
+                <li><strong>Architecture:</strong> MVVM/MVI + Clean Architecture for scale and maintenance.</li>
+                <li><strong>Quality:</strong> stability, performance, and secure patterns by default.</li>
+                <li><strong>Collaboration:</strong> mentoring, code reviews, and cross-functional teamwork.</li>
+              </ul>
+              <div class="chips" aria-label="Focus areas">
+                <span class="chip">Kotlin</span>
+                <span class="chip">Jetpack Compose</span>
+                <span class="chip">MVI / Clean</span>
+                <span class="chip">Retrofit</span>
+                <span class="chip">Dagger/Hilt</span>
+                <span class="chip">Firebase</span>
+                <span class="chip">CI/CD</span>
+                <span class="chip">Mobile Security</span>
+              </div>
             </div>
-          </div>
-        </aside>
+          </aside>
+        </div>
+
       </div>
     </section>
 
@@ -315,7 +323,6 @@
 
           <div class="card contact__note">
             <h3 class="card__title">Links</h3>
-            <p class="muted">Add your GitHub / LinkedIn links in <code>data.js</code> and they’ll show here.</p>
             <div id="socialLinks" class="social" aria-label="Social links"></div>
           </div>
         </div>
