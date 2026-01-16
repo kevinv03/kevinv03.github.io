@@ -2,7 +2,7 @@
 
 const SOCIAL = [
   // { label: "GitHub", href: "https://github.com/kevinv03" },
-  // { label: "LinkedIn", href: "https://www.linkedin.com/in/your-profile/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/kevin-villanueva-16838a1a4" },
 ];
 
 const EXPERIENCE = [
