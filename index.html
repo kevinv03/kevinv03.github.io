@@ -30,7 +30,11 @@
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
-      <button id="themeToggle" class="btn btn--ghost" type="button">Theme</button>
+
+      <!-- Keep button simple; JS will update text -->
+      <button id="themeToggle" class="btn btn--ghost" type="button" aria-label="Toggle theme">
+        Theme
+      </button>
     </nav>
   </div>
 </header>
@@ -77,6 +81,8 @@
         <a class="profileBar__item" href="tel:+639951329529">☎ (+63) 995-132-9529</a>
         <a class="profileBar__item" href="mailto:kevin.villanueva03@gmail.com">✉ kevin.villanueva03@gmail.com</a>
         <div class="profileBar__item">📍 Mabalacat City, Pampanga, PH</div>
+
+        <!-- JS will fill this -->
         <div class="profileBar__item" id="socialLinksTop"></div>
       </div>
 
@@ -125,15 +131,49 @@
         <p class="section__subtitle">A curated list of mobile projects.</p>
       </div>
 
-      <!-- JS will replace this if working -->
-      <div id="projectGrid" class="grid">
-        <article class="card">
-          <h3>Sample Project</h3>
-          <p class="muted">
-            If you still see this, it means script.js/data.js didn’t load. (This is a safe fallback.)
-          </p>
-        </article>
+      <!-- Optional filters (JS uses if present) -->
+      <div class="filters" role="region" aria-label="Project filters">
+        <div class="filters__row">
+          <label class="field">
+            <span class="field__label">Search</span>
+            <input id="searchInput" class="input" type="search" placeholder="Search projects…" autocomplete="off" />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Company</span>
+            <select id="companySelect" class="input">
+              <option value="all">All</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Platform</span>
+            <select id="platformSelect" class="input">
+              <option value="all">All</option>
+              <option value="Android">Android</option>
+              <option value="React Native">React Native</option>
+              <option value="Web">Web</option>
+              <option value="N/A">N/A</option>
+            </select>
+          </label>
+        </div>
+        <p class="filters__hint muted" id="resultCount" aria-live="polite"></p>
       </div>
+
+      <div id="projectGrid" class="grid" aria-label="Project list"></div>
+
+      <!-- Template required by JS -->
+      <template id="projectCardTpl">
+        <article class="card project">
+          <div class="project__top">
+            <h3 class="project__title"></h3>
+            <div class="project__tags" aria-label="Tags"></div>
+          </div>
+          <p class="project__desc muted"></p>
+          <div class="project__actions"></div>
+        </article>
+      </template>
+
     </div>
   </section>
 
@@ -145,15 +185,7 @@
         <p class="section__subtitle">Roles and responsibilities.</p>
       </div>
 
-      <!-- JS will replace this if working -->
-      <div class="timeline" id="timeline">
-        <article class="card">
-          <h3>Senior Mobile Developer</h3>
-          <p class="muted">
-            If you still see this, it means script.js/data.js didn’t load. (This is a safe fallback.)
-          </p>
-        </article>
-      </div>
+      <div class="timeline" id="timeline"></div>
     </div>
   </section>
 
@@ -217,9 +249,7 @@
   </div>
 </footer>
 
-<!-- IMPORTANT: make sure these files exist EXACTLY with these names -->
 <script src="data.js"></script>
 <script src="script.js"></script>
-
 </body>
 </html>
