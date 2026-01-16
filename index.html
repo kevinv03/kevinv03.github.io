@@ -17,8 +17,6 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
-
 <header class="topbar">
   <div class="container topbar__inner">
     <div class="brand">
@@ -127,7 +125,15 @@
         <p class="section__subtitle">A curated list of mobile projects.</p>
       </div>
 
-      <div id="projectGrid" class="grid"></div>
+      <!-- JS will replace this if working -->
+      <div id="projectGrid" class="grid">
+        <article class="card">
+          <h3>Sample Project</h3>
+          <p class="muted">
+            If you still see this, it means script.js/data.js didn’t load. (This is a safe fallback.)
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -138,7 +144,16 @@
         <h2 class="section__title">Experience</h2>
         <p class="section__subtitle">Roles and responsibilities.</p>
       </div>
-      <div class="timeline" id="timeline"></div>
+
+      <!-- JS will replace this if working -->
+      <div class="timeline" id="timeline">
+        <article class="card">
+          <h3>Senior Mobile Developer</h3>
+          <p class="muted">
+            If you still see this, it means script.js/data.js didn’t load. (This is a safe fallback.)
+          </p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -202,6 +217,7 @@
   </div>
 </footer>
 
+<!-- IMPORTANT: make sure these files exist EXACTLY with these names -->
 <script src="data.js"></script>
 <script src="script.js"></script>
 
