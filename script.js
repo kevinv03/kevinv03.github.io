@@ -128,7 +128,7 @@
       if (!links.length) {
         const span = document.createElement("span");
         span.className = "muted tiny";
-        span.textContent = "No public link provided.";
+        span.textContent = "No public link.";
         actions.appendChild(span);
       } else {
         links.forEach((l, idx) => {
