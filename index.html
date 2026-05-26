@@ -36,10 +36,10 @@
   </header>
 
   <main id="main">
-    <section class="hero hero--profile">
+    <section id="top" class="hero hero--profile">
       <div class="container">
 
-        <div class="profileCard">
+        <div class="profileCard" data-reveal>
           <div class="profileCard__left">
             <div class="profileAvatar">
               <img src="assets/profile.jpg" alt="Kevin S. Villanueva" />
@@ -47,13 +47,16 @@
           </div>
 
           <div class="profileCard__right">
+            <span class="profileTag"><span class="profileTag__dot"></span> Available for new projects</span>
             <h1 class="profileName">Kevin S. Villanueva</h1>
-            <div class="profileRole">Senior Mobile Application Developer</div>
+            <div class="profileRole">
+              <span class="gradientText">Senior Mobile Application Developer</span>
+            </div>
 
             <p class="profileSummary">
-              Senior Mobile Application Developer with <strong>11+ years</strong> of experience delivering scalable, high-performance mobile applications across Android and cross-platform environments.
-              Strong expertise in <strong>native Android (Kotlin, Jetpack Compose, Clean Architecture)</strong>, with hands-on experience in 
-              <strong>React Native</strong> and <strong>iOS (Swift)</strong>.
+              Senior Mobile Application Developer with <strong>12+ years</strong> shipping scalable, high-performance apps across Android and cross-platform stacks.
+              Deep expertise in <strong>native Android (Kotlin, Jetpack Compose, Clean Architecture)</strong>, with hands-on
+              <strong>React Native</strong> and <strong>iOS (Swift)</strong> delivery — currently building healthcare apps at <strong>Mercola Consulting Services</strong>.
             </p>
 
             <div class="profileCta">
@@ -63,16 +66,16 @@
             </div>
 
             <div class="profileBadges">
-              <span class="profileBadge"><strong>11+</strong> Years</span>
+              <span class="profileBadge"><strong>12+</strong> Years</span>
               <span class="profileBadge"><strong>20+</strong> Apps</span>
               <span class="profileBadge"><strong>Android</strong> Kotlin • Compose • Clean</span>
-              <span class="profileBadge"><strong>React Native</strong> • JavaScript / TypeScript </span>
-              <span class="profileBadge"><strong>iOS</strong> • Swift </span>
+              <span class="profileBadge"><strong>React Native</strong> • JS / TS</span>
+              <span class="profileBadge"><strong>iOS</strong> • Swift</span>
             </div>
           </div>
         </div>
 
-        <div>
+        <div data-reveal>
           <aside class="hero__card" aria-label="Value">
             <div class="card">
               <h2 class="card__title">How I help teams</h2>
@@ -101,12 +104,12 @@
 
     <section id="case-studies" class="section section--alt">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head" data-reveal>
           <h2 class="section__title">Impact</h2>
           <p class="section__subtitle">Client-friendly snapshot of outcomes and what I delivered. (Public links where available.)</p>
         </div>
 
-        <div class="grid grid--case">
+        <div class="grid grid--case" data-reveal>
           <article class="card case">
             <div class="case__top">
               <h3 class="case__title">Vending Machine Kiosk App</h3>
@@ -153,7 +156,7 @@
           </article>
         </div>
 
-        <div class="callout card">
+        <div class="callout card" data-reveal>
           <div>
             <h3 class="card__title">What you can expect</h3>
             <p class="muted">Senior-level ownership: scoped delivery, clean implementation, and stable releases.</p>
@@ -179,12 +182,12 @@
 
     <section id="projects" class="section">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head" data-reveal>
           <h2 class="section__title">Selected projects</h2>
           <p class="section__subtitle">Search + filter to quickly scan by company or platform.</p>
         </div>
 
-        <div class="filters" role="region" aria-label="Project filters">
+        <div class="filters" role="region" aria-label="Project filters" data-reveal>
           <div class="filters__row">
             <label class="field">
               <span class="field__label">Search</span>
@@ -210,7 +213,7 @@
           <p class="filters__hint" id="resultCount" aria-live="polite"></p>
         </div>
 
-        <div id="projectGrid" class="grid" aria-label="Project list"></div>
+        <div id="projectGrid" class="grid" aria-label="Project list" data-reveal></div>
 
         <template id="projectCardTpl">
           <article class="card project">
@@ -228,22 +231,22 @@
 
     <section id="experience" class="section section--alt">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head" data-reveal>
           <h2 class="section__title">Experience</h2>
           <p class="section__subtitle">A timeline of roles and responsibilities (most recent first).</p>
         </div>
-        <div class="timeline" id="timeline"></div>
+        <div class="timeline" id="timeline" data-reveal></div>
       </div>
     </section>
 
     <section id="skills" class="section">
       <div class="container">
-        <div class="section__head">
+        <div class="section__head" data-reveal>
           <h2 class="section__title">Skills</h2>
           <p class="section__subtitle">A quick scan of the tools and practices I use to ship reliable apps.</p>
         </div>
 
-        <div class="grid grid--skills">
+        <div class="grid grid--skills" data-reveal>
           <article class="card">
             <h3 class="card__title">Mobile</h3>
             <div class="chips">
@@ -280,7 +283,7 @@
 
     <section id="downloads" class="section section--alt">
       <div class="container downloads">
-        <div class="card">
+        <div class="card" data-reveal>
           <h2 class="section__title">Downloads</h2>
           <div class="downloads__actions">
             <a class="btn btn--primary" href="KV-CV-2026.docx" download>Download CV (DOCX)</a>
@@ -292,7 +295,7 @@
 
     <section id="contact" class="section">
       <div class="container contact">
-        <div>
+        <div data-reveal>
           <h2 class="section__title">Contact</h2>
           <p class="section__subtitle">Open to roles and freelance projects. Let’s talk.</p>
 

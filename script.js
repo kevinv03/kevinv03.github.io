@@ -66,9 +66,10 @@
     EXPERIENCE.forEach(x => {
       const el = document.createElement("article");
       el.className = "tl";
+      el.setAttribute("data-reveal", "");
       el.innerHTML = `
         <div class="tl__left">
-          <div><strong>${escapeHtml(x.dates || "")}</strong></div>
+          <strong>${escapeHtml(x.dates || "")}</strong>
           <div>${escapeHtml(x.location || "")}</div>
         </div>
         <div>
@@ -85,6 +86,41 @@
       frag.appendChild(el);
     });
     timeline.appendChild(frag);
+  }
+
+  // Scroll-reveal: fade sections in as they enter the viewport
+  const revealEls = document.querySelectorAll("[data-reveal]");
+  if ("IntersectionObserver" in window && revealEls.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.08 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add("is-visible"));
+  }
+
+  // Scroll-spy: highlight the active nav link based on visible section
+  const navLinks = Array.from(document.querySelectorAll(".nav a[href^='#']"));
+  const sections = navLinks
+    .map(a => document.getElementById(a.getAttribute("href").slice(1)))
+    .filter(Boolean);
+  if ("IntersectionObserver" in window && sections.length) {
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(a => {
+            a.classList.toggle("is-active", a.getAttribute("href") === "#" + id);
+          });
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    sections.forEach(s => spy.observe(s));
   }
 
   // Projects filtering
@@ -146,6 +182,7 @@
     });
 
     grid.appendChild(frag);
+    grid.querySelectorAll(".project").forEach(el => el.classList.add("is-visible"));
     resultCount.textContent = `${items.length} project${items.length === 1 ? "" : "s"} shown`;
   }
 

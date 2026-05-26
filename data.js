@@ -7,6 +7,17 @@ const SOCIAL = [
 
 const EXPERIENCE = [
   {
+    role: "Senior Mobile Application Developer",
+    company: "Mercola Consulting Services, LLC",
+    location: "25F Trident Towers, 312 Sen. Gil J. Puyat Ave, Makati City",
+    dates: "Mar 2026 – Present",
+    bullets: [
+      "Engaged in Android and iOS development for the Mercola healthcare app using the MVVM approach.",
+      "Leveraging AI tools — Claude, Gemini, and ChatGPT — to accelerate delivery, code review, and problem solving.",
+      "Collaborating across mobile platforms to ship reliable, user-focused healthcare experiences.",
+    ],
+  },
+  {
     role: "Freelance Mobile Application Developer",
     company: "Big Cloud Services PH",
     location: "Alabang, Muntinlupa, Manila",
@@ -104,6 +115,15 @@ const EXPERIENCE = [
 ];
 
 const PROJECTS = [
+  {
+    name: "Mercola Health App",
+    company: "Mercola Consulting Services, LLC",
+    platform: "Android",
+    tags: ["Healthcare", "iOS", "MVVM", "AI-assisted"],
+    description:
+      "Cross-platform healthcare app (Android + iOS) built with the MVVM approach. Delivery accelerated with AI tooling (Claude, Gemini, ChatGPT) for code review and problem solving.",
+    links: [],
+  },
   {
     name: "DreamLab",
     company: "CI&T Philippines",
