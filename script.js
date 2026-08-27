@@ -88,6 +88,54 @@
     timeline.appendChild(frag);
   }
 
+  // Teaching + education
+  const educationList = qs("#educationList");
+  if (educationList) {
+    const frag = document.createDocumentFragment();
+
+    (typeof TEACHING !== "undefined" ? TEACHING : []).forEach(x => {
+      const el = document.createElement("article");
+      el.className = "tl";
+      el.setAttribute("data-reveal", "");
+      el.innerHTML = `
+        <div class="tl__left">
+          <strong>${escapeHtml(x.dates || "")}</strong>
+          <div>Teaching</div>
+        </div>
+        <div>
+          <h3 class="tl__title">${escapeHtml(x.role || "")} — ${escapeHtml(x.company || "")}</h3>
+          <ul class="tl__bullets"></ul>
+        </div>
+      `;
+      const ul = el.querySelector(".tl__bullets");
+      (x.bullets || []).forEach(b => {
+        const li = document.createElement("li");
+        li.textContent = b;
+        ul.appendChild(li);
+      });
+      frag.appendChild(el);
+    });
+
+    (typeof EDUCATION !== "undefined" ? EDUCATION : []).forEach(x => {
+      const el = document.createElement("article");
+      el.className = "tl";
+      el.setAttribute("data-reveal", "");
+      el.innerHTML = `
+        <div class="tl__left">
+          <strong>${escapeHtml(x.dates || "")}</strong>
+          <div>Education</div>
+        </div>
+        <div>
+          <h3 class="tl__title">${escapeHtml(x.degree || "")}</h3>
+          <ul class="tl__bullets"><li>${escapeHtml(x.school || "")}</li></ul>
+        </div>
+      `;
+      frag.appendChild(el);
+    });
+
+    educationList.appendChild(frag);
+  }
+
   // Scroll-reveal: fade sections in as they enter the viewport
   const revealEls = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && revealEls.length) {

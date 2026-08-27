@@ -7,23 +7,34 @@ const SOCIAL = [
 
 const EXPERIENCE = [
   {
-    role: "Senior Mobile Application Developer",
-    company: "Mercola Consulting Services, LLC",
-    location: "25F Trident Towers, 312 Sen. Gil J. Puyat Ave, Makati City",
-    dates: "Mar 2026 – Present",
+    role: "Freelance Full-Stack Developer",
+    company: "DVOTE Software Corporation",
+    location: "Pasig City",
+    dates: "Aug 2026 – Present",
     bullets: [
-      "Engaged in Android and iOS development for the Mercola healthcare app using the MVVM approach.",
-      "Leveraging AI tools — Claude, Gemini, and ChatGPT — to accelerate delivery, code review, and problem solving.",
-      "Collaborating across mobile platforms to ship reliable, user-focused healthcare experiences.",
+      "Building backend services and REST APIs with NestJS (Node.js / TypeScript) and MongoDB for the mWell health platform.",
+      "Using Docker for containerized local development and Insomnia / Postman for API testing and debugging.",
     ],
   },
   {
-    role: "Freelance Mobile Application Developer",
+    role: "Senior Mobile Application Developer",
+    company: "Mercola Consulting Services, LLC",
+    location: "Makati City",
+    dates: "Mar 2026 – Sep 2026",
+    bullets: [
+      "Engaged in Android and iOS development for the Mercola healthcare app using the MVVM approach.",
+      "Leveraged AI tools — Claude, Gemini, and ChatGPT — to accelerate delivery, code review, and problem solving.",
+      "Collaborated across mobile platforms to ship reliable, user-focused healthcare experiences.",
+    ],
+  },
+  {
+    role: "Freelance Mobile & Full-Stack Developer",
     company: "Big Cloud Services PH",
     location: "Alabang, Muntinlupa, Manila",
     dates: "Sep 2025 – Dec 2025",
     bullets: [
-      "Developed a kiosk-style Android vending machine app using Kotlin + Jetpack Compose, integrated with Spring Boot backend for products, inventory, and transactions.",
+      "Developed a kiosk-style Android vending machine app (Kotlin & Jetpack Compose) integrated with a Spring Boot (Kotlin) backend for product management, inventory, and transaction processing.",
+      "Built and maintained backend endpoints in Spring Boot (Kotlin), taking features end-to-end from API to on-device UI.",
       "Implemented secure online/offline payment flows (QR payments, caching with sync) and hardware integration to trigger vending operations.",
       "Integrated third-party AI recommendation engine for personalized product suggestions.",
     ],
@@ -86,12 +97,13 @@ const EXPERIENCE = [
     ],
   },
   {
-    role: "Android Developer",
+    role: "Developer",
     company: "McVean Pacific Intl. Offshoring",
     location: "",
     dates: "2019 – 2020",
     bullets: [
-      "Developed secure cryptocurrency apps using MVP/MVVM with Retrofit and DI (Dagger).",
+      "Built secure cryptocurrency applications with an AngularJS web front-end and a Corda (blockchain/DLT) backend.",
+      "Developed companion Android apps using MVP/MVVM with Retrofit and DI (Dagger).",
     ],
   },
   {
@@ -114,7 +126,45 @@ const EXPERIENCE = [
   },
 ];
 
+const TEACHING = [
+  {
+    role: "Part-time Instructor",
+    company: "City College of Angeles",
+    dates: "2018 – 2019",
+    bullets: [
+      "Taught Application Development for 3 semesters using Java and Kotlin.",
+      "Mentored students in mobile project development and programming best practices.",
+    ],
+  },
+];
+
+const EDUCATION = [
+  {
+    degree: "Bachelor of Science in Information Technology",
+    school: "Mabalacat City College",
+    dates: "2010 – 2014",
+  },
+];
+
 const PROJECTS = [
+  {
+    name: "mWell Health Platform (Backend)",
+    company: "DVOTE Software Corporation",
+    platform: "Backend",
+    tags: ["Healthcare", "NestJS", "MongoDB", "REST API"],
+    description:
+      "Backend services and REST APIs built with NestJS (Node.js / TypeScript) and MongoDB for the mWell health platform, with Docker-based local development and Insomnia / Postman API testing.",
+    links: [{ label: "Website", href: "https://mwell.com.ph/", primary: true }],
+  },
+  {
+    name: "Vending Machine Kiosk App",
+    company: "Big Cloud Services PH",
+    platform: "Android",
+    tags: ["Kiosk", "Payments", "Spring Boot", "AI"],
+    description:
+      "Kiosk-style Android vending app (Kotlin & Jetpack Compose) with a Spring Boot (Kotlin) backend for products, inventory, and transactions — including QR payments, offline caching with sync, hardware vending triggers, and AI-driven product recommendations.",
+    links: [],
+  },
   {
     name: "Mercola Health App",
     company: "Mercola Consulting Services, LLC",
