@@ -195,10 +195,11 @@
     items.forEach(p => {
       const node = tpl.content.cloneNode(true);
       node.querySelector(".project__title").textContent = p.name;
+      node.querySelector(".project__company").textContent = p.company || "";
 
       const tagsEl = node.querySelector(".project__tags");
-      const tagList = [p.company, p.platform, ...(p.tags || [])].filter(Boolean);
-      tagList.slice(0, 6).forEach(t => {
+      const tagList = [p.platform, ...(p.tags || [])].filter(Boolean);
+      tagList.slice(0, 4).forEach(t => {
         const span = document.createElement("span");
         span.className = "tag";
         span.textContent = t;

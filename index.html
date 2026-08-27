@@ -120,8 +120,8 @@
         <div class="grid grid--case" data-reveal>
           <article class="card case">
             <div class="case__top">
+              <span class="tag">Big Cloud Services PH • 2025</span>
               <h3 class="case__title">Vending Machine Kiosk App</h3>
-              <span class="tag">Freelance • 2025</span>
             </div>
             <p class="muted">
               Built a kiosk-style Android app using Kotlin + Jetpack Compose, integrated with Spring Boot backend for
@@ -129,21 +129,24 @@
             </p>
             <ul class="bullets">
               <li>Online + offline payment flows (QR-based)</li>
-              <li>Inventory + transaction processing via backend integration</li>
-              <li>Hardware integration for vending operations</li>
-              <li>Backend endpoints built and maintained in Spring Boot (Kotlin)</li>
-              <li>AI-based recommendations for product suggestions</li>
+              <li>Spring Boot (Kotlin) endpoints for inventory and transactions</li>
+              <li>Hardware integration plus AI product recommendations</li>
             </ul>
           </article>
 
           <article class="card case">
             <div class="case__top">
+              <span class="tag">CI&amp;T Philippines • Android</span>
               <h3 class="case__title">DreamLab</h3>
-              <span class="tag">CI&T • Android</span>
             </div>
             <p class="muted">
-              Helped deliver a crowdsourcing research app that uses idle smartphone processing power to accelerate scientific research.
+              Helped deliver a Vodafone Foundation crowdsourcing app that uses idle smartphone processing power to accelerate scientific research.
             </p>
+            <ul class="bullets">
+              <li>Kotlin + Jetpack Compose on Clean Architecture / MVI</li>
+              <li>Background compute scheduling and battery-aware behaviour</li>
+              <li>Crashlytics monitoring and Play Store release support</li>
+            </ul>
             <div class="case__actions">
               <a class="link link--primary" target="_blank" rel="noreferrer"
                  href="https://www.vodafone.com/vodafone-foundation/focus-areas/dreamlab-app">Overview</a>
@@ -152,12 +155,17 @@
 
           <article class="card case">
             <div class="case__top">
+              <span class="tag">CI&amp;T Philippines • Android</span>
               <h3 class="case__title">More to Explore</h3>
-              <span class="tag">CI&T • Android</span>
             </div>
             <p class="muted">
-              Tourism/parks companion app: trail + site details, status, activities/facilities, directions, maps, and GPS guidance.
+              Companion app for Victoria's forests and parks, published for the state government.
             </p>
+            <ul class="bullets">
+              <li>Trail and site details with open/close status and facilities</li>
+              <li>Offline-friendly local maps, directions, and GPS guidance</li>
+              <li>Delivered in Agile sprints through to Play Store release</li>
+            </ul>
             <div class="case__actions">
               <a class="link link--primary" target="_blank" rel="noreferrer"
                  href="https://play.google.com/store/apps/details?id=au.gov.vic.ffm.mte.android&hl=en">Google Play</a>
@@ -228,9 +236,10 @@
         <template id="projectCardTpl">
           <article class="card project">
             <div class="project__top">
+              <span class="project__company"></span>
               <h3 class="project__title"></h3>
-              <div class="project__tags" aria-label="Tags"></div>
             </div>
+            <div class="project__tags" aria-label="Tags"></div>
             <p class="project__desc"></p>
             <div class="project__actions"></div>
           </article>

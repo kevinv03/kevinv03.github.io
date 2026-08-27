@@ -228,6 +228,15 @@ const PROJECTS = [
     ],
   },
   {
+    name: "GabayPH",
+    company: "Lilypad Solutions Inc.",
+    platform: "Android",
+    tags: ["MVP", "Retrofit", "REST API"],
+    description:
+      "Android app built on MVP architecture with Retrofit-based REST API integration, delivered in close partnership with backend developers.",
+    links: [],
+  },
+  {
     name: "On-The-House",
     company: "TwistResources Inc.",
     platform: "Web",
@@ -241,7 +250,8 @@ const PROJECTS = [
     company: "TwistResources Inc.",
     platform: "React Native",
     tags: ["N/A"],
-    description: "Details not provided publicly in the portfolio document.",
+    description:
+      "React Native application delivered for the client. Public details not available.",
     links: [],
   },
   {
@@ -281,7 +291,7 @@ const PROJECTS = [
     platform: "Android",
     tags: ["Crypto", "Exchange"],
     description:
-      "Crypto asset (virtual currency) app provided by SBI Group (features referenced in portfolio).",
+      "Crypto asset (virtual currency) trading app by SBI Group, covering spot and leveraged trading from a single app.",
     links: [
       { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.taotao_ex.android&hl=fil", primary: true },
     ],
@@ -322,7 +332,7 @@ const PROJECTS = [
     company: "Cloudstaff Inc.",
     platform: "Android",
     tags: ["Scheduling"],
-    description: "Room scheduling (meeting room) app (details not provided in the portfolio document).",
+    description: "Meeting room scheduling app for Cloudstaff employees.",
     links: [],
   },
   {
@@ -354,7 +364,7 @@ const PROJECTS = [
     company: "Incubix Technologies",
     platform: "Android",
     tags: ["Education"],
-    description: "Connecting teacher and student (details not provided in the portfolio document).",
+    description: "Connecting teachers and students.",
     links: [],
   },
   {
@@ -362,7 +372,7 @@ const PROJECTS = [
     company: "Incubix Technologies",
     platform: "Android",
     tags: ["Security"],
-    description: "Security app for homeowner, guard and admin (details not provided in the portfolio document).",
+    description: "Security app for homeowners, guards, and administrators.",
     links: [],
   },
 ];
